@@ -1,0 +1,77 @@
+<style>
+.u2_grid * {
+	font-size:13px;
+}
+.u2_grid p, .u2_grid h3 {
+	margin:7px 0;
+	padding:0;
+}
+a img.pic{width:200px; height:200px;}
+</style>
+<script language="javascript">
+$(function(){
+	$("#btnSelect").click(function(){
+		$("input[name='id[]']:checkbox").each(function(){
+			this.checked = !this.checked;							 
+		});
+	});	
+	$("#btnSearch").click(function(){
+		location.href = "__URL__/../item/all?kw="+$("#kw").val();	
+	});
+});
+</script>
+<form method="post" action="__URL__/../item/batch" id="form1">
+<div class="admin-content">
+  <div class="am-cf am-padding">
+    <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">常用模块</strong> / <small>商品管理</small></div>
+  </div>
+  <div class="am-g">
+    <div class="am-u-sm-12 am-u-md-6">
+      <div class="am-btn-toolbar">
+        <div class="am-btn-group am-btn-group-xs">
+          <!--<button type="button" class="am-btn am-btn-default" onClick="location.href='__URL__/../user/add'"><span class="am-icon-plus"></span> 新增</button>
+          <button type="button" class="am-btn am-btn-default"><span class="am-icon-save"></span> 保存</button> -->
+          <button type="button" class="am-btn am-btn-default" id="btnSelect">多选</button>
+          <button type="submit" class="am-btn am-btn-default" name="batchDel" value="1" onclick="return delBatch(document.forms['form1'])"><span class="am-icon-trash-o"></span> 删除</button>
+        </div>
+      </div>
+    </div>
+    <div class="am-u-sm-12 am-u-md-3">     
+        <div class="am-input-group am-input-group-sm">
+          <input type="text" id="kw" class="am-form-field" value="{$Think.get.kw}">
+          <span class="am-input-group-btn">
+          <button class="am-btn am-btn-default" type="button" id="btnSearch">搜索</button>
+          </span> </div>
+    </div>
+  </div>
+  
+  <p></p>
+  
+  <div class="am-g u2_grid">
+      [volist name="list" id="vo"]
+      <div class="am-u-sm-3">
+        <div class="am-thumbnail"> <a href="__URL__/../item/view?id={$vo.id}"><img src="__URL__/../../upload/{$vo.pic}" alt="" width="120" class="pic" /></a>
+          <div class="am-thumbnail-caption">
+            <h3>
+              <input name="id[]" type="checkbox" value="{$vo.id}"/>
+              {$vo.title|mb_substr=###,0,14,'utf-8'}...</h3>
+            <p>{$vo.username} 发表于 [notempty name="vo.created"]{$vo.created|date='Y-m-d H:i', ###}[/notempty]</p>
+            <p><span style="color:#F30; font-size:16px; font-weight:bold;">¥{$vo.currentPrice}</span> <span style="float:right;margin-top:5px">留言{$vo.comments} 收藏{$vo.collections}</span></p>
+            <p>
+              <button type="button" class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only" onclick="del('__URL__/del?id={$vo.id}')"><span class="am-icon-trash-o"></span> 删除</button>   
+            </p>
+          </div>
+        </div>
+      </div>
+      [/volist]
+    <div style="clear:both"></div>
+    <div class="am-cf"> 共 {$count} 条记录
+      <div class="am-fr">
+        <div class="am-pagination flickr">{$pageBar}</div>
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+[load href="__PUBLIC__/css/page.css"/]
+[load href='__PUBLIC__/js/admin.js'/]

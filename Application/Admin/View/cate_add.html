@@ -1,0 +1,50 @@
+  <!-- content start -->
+  <div class="admin-content">
+    <div class="am-cf am-padding">
+      <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg"><eq name="Think.get.uid" value="">添加<else/>编辑</eq>商品类别</strong> / <small>Personal information</small></div>
+    </div>
+
+    <hr/>
+
+    <div class="am-g">
+
+      <div class="am-u-sm-12 am-u-md-4 am-u-md-push-8">
+      </div>
+
+      <div class="am-u-sm-12 am-u-md-8 am-u-md-pull-4">
+        <div class="message-warning">{$msg}</div>
+        <form class="am-form am-form-horizontal" action="" method="post">
+          <div class="am-form-group">
+            <label for="user-name" class="am-u-sm-3 am-form-label">选择父类</label>
+            <div class="am-u-sm-9">
+              <select name="tid">
+              	<option value="0">选择分类</option>
+              	[volist name="list" id="vo"]
+              	<option value="{$vo.id}" [eq name='vo.id' value='$cate.tid']selected="selected"[/eq]>{$vo.name}</option>
+              	[/volist]
+              </select>
+              <small></small>
+            </div>
+          </div>
+
+          <div class="am-form-group">
+            <label for="user-email" class="am-u-sm-3 am-form-label">类别名</label>
+            <div class="am-u-sm-9">
+              <input type="hidden" name="id" value="{$cate.id}">
+              <input type="text" name="name" value="{$cate.name}">
+              <small></small>
+            </div>
+          </div>
+
+          <div class="am-form-group">
+            <div class="am-u-sm-9 am-u-sm-push-3">
+              <input type="hidden" name="uid" value="{$vo.uid}"/>
+              <button type="submit" class="am-btn am-btn-primary">保存</button>
+              <button type="button" class="am-btn am-btn-default am-radius" onClick="location.href='__URL__/../cate/all'">返回</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- content end -->

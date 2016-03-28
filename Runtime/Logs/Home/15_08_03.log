@@ -1,0 +1,9 @@
+[ 2015-08-03T10:29:15+08:00 ] 127.0.0.1 /home/
+ERR: 模板不存在:./Application/Home/View/Index_admin/user/all.html
+
+[ 2015-08-03T10:29:22+08:00 ] 127.0.0.1 /home/index/index
+ERR: 模板不存在:./Application/Home/View/Index_admin/user/all.html
+
+[ 2015-08-03T10:30:11+08:00 ] 127.0.0.1 /home/index/index
+ERR: 模板不存在:./Application/Home/View/Index_/admin/user/all.html
+

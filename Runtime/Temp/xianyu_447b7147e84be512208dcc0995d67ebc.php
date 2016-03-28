@@ -1,0 +1,3 @@
+<?php
+//000000000010a:17:{s:2:"id";s:3:"100";s:3:"pic";s:18:"14396393331799.jpg";s:5:"title";s:18:"凤凰牌自行车";s:7:"content";s:13:"8成新转让";s:5:"price";s:7:"4500.00";s:12:"currentPrice";s:7:"3699.00";s:3:"fee";s:2:"10";s:7:"cateId1";s:1:"1";s:7:"cateId2";s:1:"4";s:3:"uid";s:1:"1";s:8:"username";s:3:"tom";s:4:"city";N;s:8:"district";N;s:7:"created";s:10:"1439780328";s:4:"hits";s:1:"4";s:8:"comments";s:1:"1";s:11:"collections";s:1:"0";}
+?>

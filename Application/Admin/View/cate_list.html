@@ -1,0 +1,104 @@
+
+  <div class="admin-content">
+
+    <div class="am-cf am-padding">
+      <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">常用模块</strong> / <small>商品类别管理</small></div>
+    </div>
+
+	<form class="am-form" method="post" action="__URL__/../cate/batch">
+    <div class="am-g">
+      <div class="am-u-sm-12 am-u-md-6">
+        <div class="am-btn-toolbar">
+          <div class="am-btn-group am-btn-group-xs">
+            <button type="button" class="am-btn am-btn-default" onClick="location.href='__URL__/../cate/add'"><span class="am-icon-plus"></span> 新增</button>
+            <button type="submit" name="batchSave" value="1" class="am-btn am-btn-default"><span class="am-icon-save"></span> 批量保存</button>
+            <!--<button type="submit" name="batchDel" value="1" class="am-btn am-btn-default"><span class="am-icon-trash-o"></span> 删除</button>-->
+          </div>
+        </div>
+      </div>
+    </div>
+	
+    <div class="am-g">
+      <div class="am-u-sm-12">
+        
+          <table class="am-table table-main">
+            <thead>
+              <tr>
+                <th class="table-check"><input type="checkbox" /></th><th class="table-id">ID</th><th class="table-title">类别名</th>
+                <th class="table-date am-hide-sm-only">图标</th>
+                <th class="table-date am-hide-sm-only">商品数</th><th class="table-set">操作</th>
+              </tr>
+          </thead>
+          <tbody>
+          	[volist name="list" id="vo"]
+            <tr [neq name="vo.status" value="0"]class="am-disabled"[/neq]>
+              <td><input name="id[]" type="checkbox" id="id[]" value="{$vo.id}" /></td>
+              <td>{$vo.id}</td>
+              <td>
+              <input name="hid[]" type="hidden" value="{$vo.id}" />
+              <input name="name[]" type="text" value="{$vo.name}" /></td>
+              <td class="am-hide-sm-only">[notempty name="vo.pic"]<img src="__PUBLIC__/img/{$vo.pic}"/>[/notempty]</td>
+              <td class="am-hide-sm-only"></td>
+              <td>
+                <div class="am-btn-toolbar">
+                  <div class="am-btn-group am-btn-group-xs">
+                    <button type="button" class="am-btn am-btn-default am-btn-xs am-text-secondary" onclick="location.href='__URL__/../cate/edit?id={$vo.id}'"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                    <button type="button" class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only" onclick="del('__URL__/del?id={$vo.id}')"><span class="am-icon-trash-o"></span> 删除</button>             
+                    <button type="button" class="am-btn am-btn-default" onclick="location.href='__URL__/../cate/status?id={$vo.id}&status={$vo.status}'"><span class=""></span> [eq name="vo.status" value="0"]正常[else/]已停用[/eq]</button>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            [volist name="vo.subCate" id="subvo"]
+            <tr [neq name="subvo.status" value="0"]class="am-disabled"[/neq]>
+              <td><input name="id[]" type="checkbox" id="id[]" value="{$subvo.id}" /></td>
+              <td>{$subvo.id}</td>
+              <td style="padding-left:30px">
+              <input name="hid[]" type="hidden" value="{$subvo.id}" />
+              <input type="text" name="name[]" value="{$subvo.name}" /></a></td>
+              <td class="am-hide-sm-only"></td>
+              <td class="am-hide-sm-only"></td>
+              <td>
+                <div class="am-btn-toolbar">
+                  <div class="am-btn-group am-btn-group-xs">
+                    <button type="button" class="am-btn am-btn-default am-btn-xs am-text-secondary" onclick="location.href='__URL__/../cate/edit?id={$subvo.id}'"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                    <button type="button" class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only" onclick="del('__URL__/del?id={$subvo.id}')"><span class="am-icon-trash-o"></span> 删除</button>             
+                    <button type="button" class="am-btn am-btn-default" onclick="location.href='__URL__/../cate/status?id={$subvo.id}&status={$subvo.status}'"><span class=""></span> [eq name="subvo.status" value="0"]正常[else/]已停用[/eq]</button>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            [/volist]
+           [/volist]
+          </tbody>
+        </table>
+        <div class="am-cf">
+		  共{$count}个一级类别，{$subCount}个二级类别
+		  <div class="am-fr">
+		  	<div class="flickr">{$pageBar}</div>
+		  </div>
+		</div>
+        <p></p>
+        
+      </div>
+
+    </div>
+    </form>
+  </div>
+  [load href="__PUBLIC__/css/page.css"/]
+  [load href="__PUBLIC__/js/admin.js"/]
+ 
+<script language="javascript">
+$(document).ready(function(){
+	var d = dialog({
+	 skin: 'u2_dialog_black',
+   	 title: '提示',
+   	 content: '该类别下还有商品，请先删除商品才能移除类别！',
+   	 cancel: false,
+   	 quickClose: true
+	});
+	var show = "{$show}";
+	if(show==1) d.showModal();
+});
+
+</script>

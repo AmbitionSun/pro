@@ -1,0 +1,102 @@
+
+  <div class="admin-content">
+
+    <div class="am-cf am-padding">
+      <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">首页</strong> / <small>一些常用模块</small></div>
+    </div>
+
+    <ul class="am-avg-sm-1 am-avg-md-4 am-margin am-padding am-text-center admin-content-list ">
+      <li><a href="#" class="am-text-success"><span class="am-icon-btn am-icon-file-text"></span><br/>
+      商品数<br/>{$itemNums}</a></li>
+      <li><a href="#" class="am-text-warning"><span class="am-icon-btn am-icon-briefcase"></span><br/>
+      评论数<br/>{$commentNums}</a></li>
+      <li><a href="#" class="am-text-danger"><span class="am-icon-btn am-icon-recycle"></span><br/>
+      用户数<br/>{$userNums}</a></li>
+     <!-- <li><a href="#" class="am-text-secondary"><span class="am-icon-btn am-icon-user-md"></span><br/><br/></a></li>-->
+    </ul>
+
+    <div class="am-g">
+      <div class="am-u-sm-12">
+        <table class="am-table am-table-bd am-table-striped admin-content-table">
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th>商品标题</th>
+            <th>评论数</th>
+            <th>用户</th>
+            <th>发布时间</th>
+            </tr>
+          </thead>
+          <tbody>
+          [volist name="items" id="vo"]
+          <tr><td>{$vo.id}</td><td><a href="__URL__/../item/view?id={$vo.id}">{$vo.title}</a></td> <td><span class="am-badge am-badge-success">{$vo.comments}</span></td>
+            <td>{$vo.username}</td>
+            <td>{$vo.created}</td>
+            </tr>
+            [/volist]
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="am-g">
+      <div class="am-u-md-6">
+        <div class="am-panel am-panel-default">
+          <div class="am-panel-hd am-cf" data-am-collapse="{target: '#collapse-panel-2'}">活跃用户统计<span class="am-icon-chevron-down am-fr" ></span></div>
+          <div id="collapse-panel-2" class="am-in">
+            <table class="am-table am-table-bd am-table-bdrs am-table-striped am-table-hover">
+              <tbody>
+              <tr>
+                <th class="am-text-center">#</th>
+                <th>用户名</th>
+                <th>登陆次数</th>
+              </tr>
+              [volist name="users" id="vo"]
+              <tr>
+                <td class="am-text-center"><img src="https://wwc.alicdn.com/avatar/getAvatar.do?userId=0&width=60&height=60&type=sns" alt="" width="20"></td>
+                <td>{$vo.username}</td>
+                <td>{$vo.loginTimes}</td>
+              </tr>
+              [/volist]
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="am-u-md-6">
+        <div class="am-panel am-panel-default">
+          <div class="am-panel-hd am-cf" data-am-collapse="{target: '#collapse-panel-3'}">最近留言<span class="am-icon-chevron-down am-fr" ></span></div>
+          <div class="am-panel-bd am-collapse am-in am-cf" id="collapse-panel-3">
+            <ul class="am-comments-list admin-content-comment">
+            
+              [volist name="comments" id="vo"]
+              <li class="am-comment">
+                <a href="#"><img src="http://s.amazeui.org/media/i/demos/bw-2014-06-19.jpg?imageView/1/w/96/h/96" alt="" class="am-comment-avatar" width="48" height="48"></a>
+                <div class="am-comment-main">
+                  <header class="am-comment-hd">
+                    <div class="am-comment-meta"><a href="#" class="am-comment-author">{$vo.username}</a> 评论于 <time>{$vo.created}</time> 
+                    @ <a href="__URL__/../item/view?id={$vo.itemId}">{$vo.title}</a></div>
+                  </header>
+                  <div class="am-comment-bd"><p>{$vo.content}</p>
+                  </div>
+                </div>
+              </li>
+			  [/volist]
+              
+            </ul>
+            <!--<ul class="am-pagination am-fr admin-content-pagination">
+              <li class="am-disabled"><a href="#">&laquo;</a></li>
+              <li class="am-active"><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li><a href="#">&raquo;</a></li>
+            </ul>-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- content end -->

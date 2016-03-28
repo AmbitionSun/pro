@@ -1,0 +1,25 @@
+[ 2015-08-08T19:53:59+08:00 ] 127.0.0.1 /admin/cate/all
+ERR: Think\Model:all方法不存在！
+
+[ 2015-08-08T19:54:05+08:00 ] 127.0.0.1 /admin/cate/all
+ERR: Think\Model:all方法不存在！
+
+[ 2015-08-08T19:54:18+08:00 ] 127.0.0.1 /admin/cate/all
+ERR: Think\Model:all方法不存在！
+
+[ 2015-08-08T19:54:27+08:00 ] 127.0.0.1 /admin/cate/all
+ERR: Think\Model:all方法不存在！
+
+[ 2015-08-08T19:54:50+08:00 ] 127.0.0.1 /admin/cate/all
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000500s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001500s ]
+NOTIC: [2048] Declaration of Admin\Logic\CateLogic::delete() should be compatible with Think\Model::delete($options = Array) D:\360\www2\xianyu\Application\Admin\Logic\CateLogic.class.php 第 4 行.
+NOTIC: [2048] Declaration of Admin\Logic\CateLogic::find() should be compatible with Think\Model::find($options = Array) D:\360\www2\xianyu\Application\Admin\Logic\CateLogic.class.php 第 4 行.
+NOTIC: [2048] Declaration of Admin\Logic\CateLogic::query() should be compatible with Think\Model::query($sql, $parse = false) D:\360\www2\xianyu\Application\Admin\Logic\CateLogic.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `tp_cate` [ RunTime:0.0050s ]
+ERR: Think\Model:all方法不存在！
+

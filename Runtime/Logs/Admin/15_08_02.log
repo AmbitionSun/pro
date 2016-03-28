@@ -1,0 +1,57 @@
+[ 2015-08-02T11:34:40+08:00 ] 127.0.0.1 /admin/index/index
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'i' in 'field list'
+
+[ 2015-08-02T11:35:18+08:00 ] 127.0.0.1 /admin/index/index
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'i' in 'field list'
+
+[ 2015-08-02T11:35:41+08:00 ] 127.0.0.1 /admin/index/index
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'i' in 'field list'
+
+[ 2015-08-02T11:36:34+08:00 ] 127.0.0.1 /admin/index/index
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'i' in 'field list'
+
+[ 2015-08-02T11:55:01+08:00 ] 127.0.0.1 /admin/user/login
+ERR: Think\Model:finde方法不存在！
+
+[ 2015-08-02T16:32:59+08:00 ] 127.0.0.1 /admin/index/index
+ERR: 参数错误或者未定义:i
+
+[ 2015-08-02T16:33:10+08:00 ] 127.0.0.1 /admin/index/index/i
+ERR: 参数错误或者未定义:i
+
+[ 2015-08-02T16:33:58+08:00 ] 127.0.0.1 /admin/index/index/a
+ERR: 参数错误或者未定义:i
+
+[ 2015-08-02T16:34:00+08:00 ] 127.0.0.1 /admin/index/index/i
+ERR: 参数错误或者未定义:i
+
+[ 2015-08-02T16:34:06+08:00 ] 127.0.0.1 /admin/index/index/a/1
+ERR: 参数错误或者未定义:i
+
+[ 2015-08-02T16:48:25+08:00 ] 127.0.0.1 /admin/index/index
+ERR: 参数错误或者未定义:i
+
+[ 2015-08-02T16:49:00+08:00 ] 127.0.0.1 /admin/index/index
+ERR: 参数错误或者未定义:i
+
+[ 2015-08-02T16:49:08+08:00 ] 127.0.0.1 /admin/index/index
+ERR: 参数错误或者未定义:i
+
+[ 2015-08-02T16:57:32+08:00 ] 127.0.0.1 /admin/item/all
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'xianyu.logicitem' doesn't exist
+
+[ 2015-08-02T17:11:14+08:00 ] 127.0.0.1 /admin/user/login1
+ERR: 非法操作:login1
+
+[ 2015-08-02T17:29:06+08:00 ] 127.0.0.1 /admin/cate/all
+ERR: Think\Model:all方法不存在！
+
+[ 2015-08-02T17:34:25+08:00 ] 127.0.0.1 /admin/cate/all
+ERR: Think\Model:all方法不存在！
+
+[ 2015-08-02T17:44:54+08:00 ] 127.0.0.1 /admin/cate/all
+ERR: Think\Model:all方法不存在！
+
+[ 2015-08-02T17:45:02+08:00 ] 127.0.0.1 /admin/cate/all
+ERR: Think\Model:all方法不存在！
+

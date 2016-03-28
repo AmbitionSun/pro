@@ -1,0 +1,18 @@
+[ 2015-08-05T20:55:28+08:00 ] 127.0.0.1 /api/item/post
+ERR: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`xianyu`.`tp_item`, CONSTRAINT `tp_item_ibfk_2` FOREIGN KEY (`username`) REFERENCES `tp_user` (`username`) ON DELETE CASCADE ON UPDATE CASCADE)
+
+[ 2015-08-05T20:55:58+08:00 ] 127.0.0.1 /api/item/post
+ERR: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`xianyu`.`tp_item`, CONSTRAINT `tp_item_ibfk_2` FOREIGN KEY (`username`) REFERENCES `tp_user` (`username`) ON DELETE CASCADE ON UPDATE CASCADE)
+
+[ 2015-08-05T20:56:24+08:00 ] 127.0.0.1 /api/item/post
+ERR: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`xianyu`.`tp_item`, CONSTRAINT `tp_item_ibfk_2` FOREIGN KEY (`username`) REFERENCES `tp_user` (`username`) ON DELETE CASCADE ON UPDATE CASCADE)
+
+[ 2015-08-05T21:10:31+08:00 ] 127.0.0.1 /api/item/post
+ERR: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`xianyu`.`tp_item`, CONSTRAINT `tp_item_ibfk_2` FOREIGN KEY (`username`) REFERENCES `tp_user` (`username`) ON DELETE CASCADE ON UPDATE CASCADE)
+
+[ 2015-08-05T21:40:15+08:00 ] 127.0.0.1 /api/item/post
+ERR: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`xianyu`.`tp_item`, CONSTRAINT `tp_item_ibfk_2` FOREIGN KEY (`username`) REFERENCES `tp_user` (`username`) ON DELETE CASCADE ON UPDATE CASCADE)
+
+[ 2015-08-05T21:40:24+08:00 ] 127.0.0.1 /api/item/post
+ERR: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`xianyu`.`tp_item`, CONSTRAINT `tp_item_ibfk_2` FOREIGN KEY (`username`) REFERENCES `tp_user` (`username`) ON DELETE CASCADE ON UPDATE CASCADE)
+
